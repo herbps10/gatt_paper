@@ -9,8 +9,6 @@ BASE_PATH <- Sys.getenv("BASE_PATH")
 
 wrapper <- function(f, estimator) {
   function(index, seed, tau, a, N, scenario, ...) {
-    print(as.numeric(Sys.getenv("SLURM_ARRAY_TASK_ID")))
-    print(seed)
     params <- list(...)
     params$riesz <- TRUE
 
